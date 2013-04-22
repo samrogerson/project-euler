@@ -7,10 +7,12 @@ package main
 
 import  (
     "fmt"
-    "math"
+    "strconv"
 )
 
-var ndigits = 3
+func palindrome(s string) bool {
+    return s == reverse(s)
+}
 
 func reverse(s string) string {
     runes := []rune(s)
@@ -21,20 +23,15 @@ func reverse(s string) string {
 }
 
 func main() {
-    imin := int(math.Pow(10, float64(ndigits-1)))
-    imax := int(math.Pow(10, float64(ndigits)) - 1)
-
-    imin *= imin
-    imax *= imax
-
-    s := string("")
-    r := string("")
-    for i := imax; i>imin; i-- {
-        s = fmt.Sprintf("%d",i)
-        r = reverse(s)
-        if s == r {
-            break
+    best := 0
+    for i := 999; i > 99; i-- {
+        for j := 999; j > 99; j-- {
+            if palindrome(strconv.Itoa(j * i)) {
+                if j*i > best {
+                    best = j * i
+                }
+            }
         }
     }
-    fmt.Println(s)
+    fmt.Println(best)
 }
