@@ -1,5 +1,7 @@
 package primes
 
+import "math"
+
 func IsPrime(n int64) (prime bool) {
     return len(Factors(n)) == 1
 }
@@ -27,6 +29,9 @@ func PrimesBelow(n int64) (primes []int64) {
 }
 
 func Factors(n int64) (factors []int64) {
+    if n <= int64(0) {
+        return
+    }
     for n & 1 == 0 {
         factors = append(factors, int64(2))
         n = n / 2.
@@ -45,5 +50,25 @@ func Factors(n int64) (factors []int64) {
         factors = append(factors,n)
     }
 
+    return 
+}
+
+func AllFactors(n uint64) (factors []uint64) {
+    for i:=uint64(1); i<=n; i++ {
+        if n % i == 0 {
+            factors = append(factors,i)
+        }
+    }
+    return 
+}
+
+func NumFactors(n uint64) (nfac uint64) {
+    nfac = uint64(0)
+    for i:=uint64(2); i<=uint64(math.Sqrt(float64(n))); i++ {
+        if n % i == 0 {
+            nfac++
+        }
+    }
+    nfac *=2
     return 
 }
