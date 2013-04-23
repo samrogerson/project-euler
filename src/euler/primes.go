@@ -15,6 +15,17 @@ func NthPrime(n int) (p int64) {
     return
 }
 
+func PrimesBelow(n int64) (primes []int64) {
+    primes = make([]int64,1)
+    primes[0] = 2
+    for i := int64(3); i<n; i += 2 {
+        if IsPrime(i) {
+            primes = append(primes,i)
+        }
+    }
+    return primes
+}
+
 func Factors(n int64) (factors []int64) {
     for n & 1 == 0 {
         factors = append(factors, int64(2))
