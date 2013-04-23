@@ -3,27 +3,27 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func SumDivisors(divisors []int, max int) (total int) {
-    for i := 0; i < max; i+=1 {
-        for _, div := range divisors {
-            if i % div == 0 {
-                total += i
-                break
-            }
-        }
-    }
-    return
+	for i := 0; i < max; i += 1 {
+		for _, div := range divisors {
+			if i%div == 0 {
+				total += i
+				break
+			}
+		}
+	}
+	return
 }
 
 func main() {
-    divisors := make([]int,2)
-    divisors[0] = 3
-    divisors[1] = 5
-    fmt.Println(divisors)
+	divisors := make([]int, 2)
+	divisors[0] = 3
+	divisors[1] = 5
+	fmt.Println(divisors)
 
-    total := SumDivisors(divisors, 1000)
-    fmt.Println(total)
+	total := SumDivisors(divisors, 1000)
+	fmt.Println(total)
 }
