@@ -3,11 +3,10 @@
 package main
 
 import (
-    "fmt"
-    "euler"
+	"euler"
+	"fmt"
 )
 
-
 func main() {
-    fmt.Println(primes.Factors(600851475143))
+	fmt.Println(primes.Factors(600851475143))
 }
