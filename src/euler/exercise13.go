@@ -8,6 +8,7 @@ package euler
 import (
     "math/big"
     "strings"
+    "strconv"
 )
 
 func getnumbers() (numbers []string) {
@@ -125,9 +126,10 @@ func sumstrings(numbers []string) (tot big.Int) {
     return tot
 }
 
-func Exercise13() string {
+func Exercise13() int {
     nums := getnumbers()
     total := sumstrings(nums)
     s := total.String()
-    return s[0:10]
+    v, _ := strconv.Atoi(s[0:10])
+    return v
 }

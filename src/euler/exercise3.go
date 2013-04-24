@@ -6,6 +6,7 @@ import (
 	"euler/primes"
 )
 
-func Exercise3() []int64 {
-	return primes.Factors(600851475143)
+func Exercise3() int64 {
+    factors := primes.Factors(600851475143)
+    return factors[len(factors)-1]
 }
