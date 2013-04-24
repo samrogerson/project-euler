@@ -21,13 +21,30 @@ two abundant numbers.
 package euler
 
 import (
-    //"fmt"
+    "fmt"
+    "euler/primes"
+    "euler/utils"
 )
 
 const ( 
-    max = 28123
+    maxabundant = 28124 // all numbers >= this cna be written as sum of 2A
 )
 
+func collectabundant()  { // []int {
+    abundant := make([]uint64,0)
+
+    for i := uint64(2); i <= uint64(maxabundant); i++ {
+        factors := primes.AllFactors(uint64(i))
+        factors = factors[0:len(factors)-1]
+        sum := utils.AccumulateUint64(factors)
+        if sum > uint64(i) { 
+            abundant = append(abundant, i)
+        }
+    }
+    fmt.Println(abundant)
+}
+
 func Exercise23() int {
+    collectabundant()
     return 1
 }

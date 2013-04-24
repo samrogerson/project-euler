@@ -8,6 +8,10 @@ What is the greatest product of four adjacent numbers in the same direction
 
 package euler
 
+import (
+    "euler/utils"
+)
+
 var grid = make([][]int,20)
 
 func makegrid() {
@@ -41,15 +45,6 @@ func product(nums []int) (prod int64) {
     return prod
 }
 
-func MaxInt64(a, b int64) int64 {
-    if a > b {
-        return a
-    } else {
-        return b
-    }
-    return 0
-}
-
 func highestproduct(grid [][]int, plength int) (maxprod int64){
     maxprod = 0
     nrows := len(grid)
@@ -58,23 +53,23 @@ func highestproduct(grid [][]int, plength int) (maxprod int64){
     for i := range grid {
         for j:= range grid[i] {
             if j<=ncolumns-plength {
-                maxprod = MaxInt64(maxprod, product(grid[i][j:j+4]))
+                maxprod = utils.MaxInt64(maxprod, product(grid[i][j:j+4]))
             }
             if j<=ncolumns-plength && i<=nrows-plength {
                 for t := range temp {
                     temp[t] = grid[i+t][j+t]
                 }
-                maxprod = MaxInt64(maxprod, product(temp))
+                maxprod = utils.MaxInt64(maxprod, product(temp))
                 for t := range temp {
                     temp[t] = grid[i+t][j]
                 }
-                maxprod = MaxInt64(maxprod, product(temp))
+                maxprod = utils.MaxInt64(maxprod, product(temp))
             }
             if j>=plength && i<=nrows-plength {
                 for t:= range temp {
                     temp[t] = grid[i+t][j-t]
                 }
-                maxprod = MaxInt64(maxprod, product(temp))
+                maxprod = utils.MaxInt64(maxprod, product(temp))
             }
                     
         }

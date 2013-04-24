@@ -29,13 +29,6 @@ func collatz(start uint64) (nterms uint64)  {
     return
 }
 
-func MaxUInt64(a, b uint64) uint64 {
-    if a > b {  
-        return a
-    }
-    return b
-}
-
 func Exercise14() uint64 {
     chainlength := uint64(0)
     tmp := uint64(0)

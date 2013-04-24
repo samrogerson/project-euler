@@ -16,15 +16,8 @@ package euler
 
 import (
     "euler/primes"
+    "euler/utils"
 )
-
-func Accumulate(seq []uint64) (total uint64) {
-    for _, v := range seq {
-        total += v
-    }
-    return
-}
-
 
 var lookup = make([]uint64,10001)
 
@@ -33,7 +26,7 @@ func Exercise21() uint64 {
     for num := uint64(1); num<uint64(10000); num++ {
         factors := primes.AllFactors(num)
         factors = factors[0:len(factors)-1] // shave off "self"
-        dn := Accumulate(factors)
+        dn := utils.AccumulateUint64(factors)
         if dn < uint64(10000) {
             if lookup[dn] == num {
                 sum += num + dn
