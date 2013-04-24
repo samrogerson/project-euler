@@ -7,7 +7,7 @@ Find the 10001st prime number
 package main
 
 import (
-	"euler"
+	"euler/primes"
 	"fmt"
 )
 

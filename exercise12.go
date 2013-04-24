@@ -11,7 +11,7 @@ package main
 
 import (
     "fmt"
-    "euler"
+    "euler/primes"
 )
 
 
