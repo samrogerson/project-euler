@@ -15,7 +15,6 @@ Evaluate the sum of all the amicable numbers under 10000.
 package euler
 
 import (
-    "fmt"
     "euler/primes"
 )
 
@@ -29,7 +28,7 @@ func Accumulate(seq []uint64) (total uint64) {
 
 var lookup = make([]uint64,10001)
 
-func Exercise21() int {
+func Exercise21() uint64 {
     sum := uint64(0)
     for num := uint64(1); num<uint64(10000); num++ {
         factors := primes.AllFactors(num)
@@ -44,4 +43,3 @@ func Exercise21() int {
     }
     return sum
 }
-
