@@ -31,6 +31,7 @@ var funcs = map[int] interface{}{
     19: euler.Exercise19,
     20: euler.Exercise20,
     21: euler.Exercise21,
+    22: euler.Exercise22,
     67: euler.Exercise67,
 } 
 
@@ -39,7 +40,7 @@ func main() {
 
     _, check := funcs[*ex]
     if check {
-        fmt.Print("Running Exercise... ", *ex)
+        fmt.Print("Running Exercise ", *ex, "... ")
         f := reflect.ValueOf(funcs[*ex])
         result := f.Call([]reflect.Value{})[0]
         k := result.Kind()
