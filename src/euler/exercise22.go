@@ -1,8 +1,7 @@
 package euler
 
 import (
-    "fmt"
-    "euler/web"
+    "euler/utils"
     "strings"
     "sort"
 )
@@ -37,14 +36,24 @@ var LetterLookup = map[rune] int {
 }
 
 func AlphabetValue(name string) int {
-    //runes := []rune(name)
-    return 1
+    runes := []rune(name)
+    value := 0
+    for _, letter := range runes {
+        value += LetterLookup[letter]
+    }
+    return value
 }
 
-func Exercise22() int {
-    data := web.FetchText("http://projecteuler.net/project/names.txt")
-    lines := strings.Split(data,",")
-    sort.Strings(lines)
-    fmt.Println(lines)
-    return 0
+func Exercise22() uint64 {
+    data := utils.ReadFileOrURL("docs/exercise22.dat", "http://projecteuler.net/project/names.txt")
+    data = strings.Replace(data,"\"","", -1)
+    names := strings.Split(data,",")
+    sort.Strings(names)
+    total := uint64(0)
+    for pos, name := range names {
+        value := uint64(AlphabetValue(name))
+        value *= uint64(pos+1)
+        total += value
+    }
+    return total
 }
