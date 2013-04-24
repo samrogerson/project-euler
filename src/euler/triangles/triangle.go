@@ -3,7 +3,6 @@ package triangles
 import (
     "strings"
     "strconv"
-    //"fmt"
 )
 func Splittext(s string) (linearrays [][]int) {
     lines := strings.Split(s,"\n")
@@ -27,7 +26,7 @@ func MaxInt(a, b int) int {
     return b
 }
 
-func Maxroute(linearrays [][]int) int {
+func Maxroute(linearrays [][]int) (int, [][]int) {
     nlines := len(linearrays)
     totals := make([][]int,nlines)
     totals[0] = linearrays[0]
@@ -41,8 +40,5 @@ func Maxroute(linearrays [][]int) int {
         }
     }
 
-    //for _, line := range totals {
-        //fmt.Println(line)
-    //}
-    return totals[nlines-1][0]
+    return totals[nlines-1][0], totals
 }
