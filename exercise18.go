@@ -41,14 +41,31 @@ func splittext(s string) (linearrays [][]int) {
     return
 }
 
+func MaxInt(a, b int) int {
+    if a > b {
+        return a
+    }
+    return b
+}
+
 func maxroute(linearrays [][]int) int {
     nlines := len(linearrays)
-    totals := linearrays[0]
+    totals := make([][]int,nlines)
+    totals[0] = linearrays[0]
 
     for lnum := 1; lnum < nlines; lnum++ {
-        fmt.Println(lnum)
+        linelength := len(linearrays[lnum])
+        totals[lnum] = make([]int, linelength)
+        for intnum := range totals[lnum] {
+            totals[lnum][intnum] = linearrays[lnum][intnum] +
+                MaxInt(totals[lnum-1][intnum],totals[lnum-1][intnum+1])
+        }
     }
-    return 0
+
+    for _, line := range totals {
+        fmt.Println(line)
+    }
+    return totals[nlines-1][0]
 }
 
 
