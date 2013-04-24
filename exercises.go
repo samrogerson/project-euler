@@ -36,14 +36,19 @@ var funcs = map[int] interface{}{
 
 func main() {
     flag.Parse()
-    fmt.Print("Running Exercise... ", *ex)
 
-    f := reflect.ValueOf(funcs[*ex])
-    result := f.Call([]reflect.Value{})[0]
-    k := result.Kind()
-    if k >= reflect.Int && k <= reflect.Int64 {
-        fmt.Println(result.Int())
-    } else if k >= reflect.Uint && k <= reflect.Uint64 {
-        fmt.Println(result.Uint())
+    _, check := funcs[*ex]
+    if check {
+        fmt.Print("Running Exercise... ", *ex)
+        f := reflect.ValueOf(funcs[*ex])
+        result := f.Call([]reflect.Value{})[0]
+        k := result.Kind()
+        if k >= reflect.Int && k <= reflect.Int64 {
+            fmt.Println(result.Int())
+        } else if k >= reflect.Uint && k <= reflect.Uint64 {
+            fmt.Println(result.Uint())
+        }
+    } else {
+        fmt.Println("Specified invalid Exercise number", *ex)
     }
 }
