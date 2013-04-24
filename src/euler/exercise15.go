@@ -17,9 +17,7 @@ How many such routes are there through a 20 x 20 grid?
 
 */
 
-package main
-
-import "fmt"
+package euler
 
 var ngrid = 20
 
@@ -41,15 +39,14 @@ func reduceseq(seq []int64) (next []int64) {
     return
 }
 
-func main() {
+func Exercise15() int64 {
     start := []int64{1}
     seq := start
     for ; len(seq) < ngrid+1; {
         seq = expandseq(seq)
     }
-    fmt.Println(seq)
     for ; len(seq) > 1; {
         seq = reduceseq(seq)
     }
-    fmt.Println(seq[0])
+    return seq[0]
 }

@@ -7,10 +7,9 @@ and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 Find the sum of the digits in the number 100!
 */
 
-package main
+package euler
 
 import (
-    "fmt"
     "math/big"
     "strconv"
 )
@@ -20,7 +19,7 @@ func Factorial(n int64) (total big.Int) {
     return total
 }
 
-func main() {
+func Exercise20() int {
     result := Factorial(100)
     rstring := result.String()
     runes := []rune(rstring)
@@ -29,5 +28,5 @@ func main() {
         temp, _ := strconv.Atoi(string(r))
         total += temp
     }
-    fmt.Println(total)
+    return total
 }

@@ -3,10 +3,9 @@
 
 //Find the largest palindrome made from the product of two 3-digit numbers.
 
-package main
+package euler
 
 import  (
-    "fmt"
     "strconv"
 )
 
@@ -22,7 +21,7 @@ func reverse(s string) string {
 	return string(runes)
 }
 
-func main() {
+func Exercise4() int {
     best := 0
     for i := 999; i > 99; i-- {
         for j := 999; j > 99; j-- {
@@ -33,5 +32,5 @@ func main() {
             }
         }
     }
-    fmt.Println(best)
+    return best
 }

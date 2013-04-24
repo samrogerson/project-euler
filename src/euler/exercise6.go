@@ -12,9 +12,7 @@ Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
 */
 
-package main
-
-import "fmt"
+package euler
 
 func SumOfSquares(n int) (sum int64) {
     sum = int64(0)
@@ -30,7 +28,7 @@ func SquareOfSum(n int) (sum int64) {
     return
 }
 
-func main() {
-    fmt.Println(SquareOfSum(100)-SumOfSquares(100))
+func Exercise6() int64 {
+    return SquareOfSum(100)-SumOfSquares(100)
 }
 

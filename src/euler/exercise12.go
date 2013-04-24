@@ -7,10 +7,9 @@ the 7th triangle number would be 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. The first ten
 terms would be:
 */
 
-package main
+package euler
 
 import (
-    "fmt"
     "euler/primes"
 )
 
@@ -22,6 +21,6 @@ func TriangleNumberFactors(nfactors uint64) (num uint64) {
     return
 }
 
-func main() {
-    fmt.Println(TriangleNumberFactors(500))
+func Exercise12() uint64 {
+    return TriangleNumberFactors(500)
 }

@@ -15,9 +15,7 @@ How many Sundays fell on the first of the month during the twentieth century (1
 Jan 1901 to 31 Dec 2000)?
 */
 
-package main
-
-import "fmt"
+package euler
 
 const (
     monday = iota
@@ -79,7 +77,7 @@ func YearLength(year int) (length int) {
     return
 }
 
-func main() {
+func Exercise19() int {
     day := monday // date 1/1/1900
     day += YearLength(1900) % 7
     first_month_sunday := 0
@@ -92,5 +90,5 @@ func main() {
             day = (day + skip)  % 7
         }
     }
-    fmt.Println(first_month_sunday)
+    return first_month_sunday
 }

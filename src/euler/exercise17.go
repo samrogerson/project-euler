@@ -6,12 +6,10 @@ If all the numbers from 1 to 1000 (one thousand) inclusive were written out in
 words, how many letters would be used?
 */
 
-package main
+package euler
 
 import (
-    "fmt"
     "strconv"
-    //"strings"
 )
 
 var hundred = 7
@@ -97,14 +95,13 @@ func NumberAsLetterCount(groups [][]rune) int {
 }
 
 
-func main() {
+func Exercise17() int {
     totalletters :=0
     temp := 0
     for num := 1; num<=1000; num++ {
         groups := SeparateByThrees(num)
         temp = NumberAsLetterCount(groups)
         totalletters += temp
-        fmt.Println(num, temp)
     }
-    fmt.Println(totalletters)
+    return totalletters
 }

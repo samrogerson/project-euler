@@ -6,11 +6,7 @@ What is the greatest product of four adjacent numbers in the same direction
 (up, down, left, right, or diagonally) in the 2020 grid?
 */
 
-package main
-
-import (
-    "fmt"
-)
+package euler
 
 var grid = make([][]int,20)
 
@@ -86,7 +82,7 @@ func highestproduct(grid [][]int, plength int) (maxprod int64){
     return
 }
 
-func main() {
+func Exercise11() int64 {
     makegrid()
-    fmt.Println(highestproduct(grid,4))
+    return highestproduct(grid,4)
 }

@@ -1,10 +1,6 @@
 /*Find the sum of the mutliple of 3 or 5 below 1000*/
 
-package main
-
-import (
-	"fmt"
-)
+package euler
 
 func SumDivisors(divisors []int, max int) (total int) {
 	for i := 0; i < max; i += 1 {
@@ -18,12 +14,11 @@ func SumDivisors(divisors []int, max int) (total int) {
 	return
 }
 
-func main() {
+func Exercise1() int {
 	divisors := make([]int, 2)
 	divisors[0] = 3
 	divisors[1] = 5
-	fmt.Println(divisors)
 
 	total := SumDivisors(divisors, 1000)
-	fmt.Println(total)
+	return total
 }

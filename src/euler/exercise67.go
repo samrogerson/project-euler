@@ -1,14 +1,13 @@
 
-package main
+package euler
 
 import (
-    "fmt"
     "net/http"
     "io/ioutil"
     "euler/triangles"
 )
 
-func main() {
+func Exercise67() int {
     triweb, _ := http.Get("http://projecteuler.net/project/triangle.txt")
     defer triweb.Body.Close()
     tritext, _ := ioutil.ReadAll(triweb.Body)
@@ -16,6 +15,5 @@ func main() {
     lines := triangles.Splittext(tri)
     nlines := len(lines)
     max, _ := triangles.Maxroute(lines[1:nlines])
-    fmt.Println(max)
-
+    return max
 }

@@ -3,10 +3,9 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit
 numbers.
 */
 
-package main
+package euler
 
 import (
-    "fmt"
     "math/big"
     "strings"
 )
@@ -126,10 +125,9 @@ func sumstrings(numbers []string) (tot big.Int) {
     return tot
 }
 
-func main() {
+func Exercise13() string {
     nums := getnumbers()
     total := sumstrings(nums)
     s := total.String()
-    fmt.Println(s[0:10])
-
+    return s[0:10]
 }

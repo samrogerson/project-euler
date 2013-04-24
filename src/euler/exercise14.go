@@ -15,9 +15,7 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 */
 
-package main
-
-import "fmt"
+package euler
 
 func collatz(start uint64) (nterms uint64)  {
     nterms = uint64(1)
@@ -38,7 +36,7 @@ func MaxUInt64(a, b uint64) uint64 {
     return b
 }
 
-func main() {
+func Exercise14() uint64 {
     chainlength := uint64(0)
     tmp := uint64(0)
     longestseed := uint64(0)
@@ -49,5 +47,5 @@ func main() {
             longestseed = uint64(i)
         }
     }
-    fmt.Println(longestseed, chainlength)
+    return longestseed
 }

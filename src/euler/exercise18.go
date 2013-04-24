@@ -2,10 +2,9 @@
 
 */
 
-package main
+package euler
 
 import (
-    "fmt"
     "euler/triangles"
 )
 
@@ -27,8 +26,8 @@ var ttext = "75\n"+
 
 
 
-func main() {
+func Exercise18() int {
     lines := triangles.Splittext(ttext)
-    fmt.Println(triangles.Maxroute(lines))
-    
+    total, _ := triangles.Maxroute(lines)
+    return total
 }

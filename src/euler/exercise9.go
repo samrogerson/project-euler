@@ -16,11 +16,7 @@ a + b +  = 1000c  = 1000
 */
 
 
-package main
-
-import (
-    "fmt"
-)
+package euler
 
 func pythag(total int) (a,b,c int) {
     for a= 1; a < total - 5; a++ {
@@ -37,8 +33,7 @@ func pythag(total int) (a,b,c int) {
 
 
 
-func main() {
+func Exercise9() int {
     a,b,c := pythag(1000)
-    fmt.Println(a,b,c)
-    fmt.Println(a*b*c)
+    return a*b*c
 }

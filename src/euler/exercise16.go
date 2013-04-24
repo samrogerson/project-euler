@@ -6,15 +6,14 @@ What is the sum of the digits of the number 2^1000?
 
 */
 
-package main
+package euler
 
 import (
-    "fmt"
     "strconv"
     "math/big"
 )
 
-func main() {
+func Exercise16() int {
     num := big.NewInt(0)
     base := big.NewInt(2)
     exponent := big.NewInt(1000)
@@ -27,5 +26,5 @@ func main() {
         val, _ = strconv.Atoi(string(r)) 
         total += val
     }
-    fmt.Println(total)
+    return total
 }
