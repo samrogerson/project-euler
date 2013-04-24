@@ -15,10 +15,7 @@ func main() {
     tri := string(tritext)
     lines := triangles.Splittext(tri)
     nlines := len(lines)
-    max, totals := triangles.Maxroute(lines[1:nlines])
-    for _, l := range totals {
-        fmt.Println(len(l))
-    }
+    max, _ := triangles.Maxroute(lines[1:nlines])
     fmt.Println(max)
 
 }
