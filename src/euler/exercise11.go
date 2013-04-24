@@ -41,7 +41,7 @@ func product(nums []int) (prod int64) {
     return prod
 }
 
-func max(a, b int64) int64 {
+func MaxInt64(a, b int64) int64 {
     if a > b {
         return a
     } else {
@@ -58,23 +58,23 @@ func highestproduct(grid [][]int, plength int) (maxprod int64){
     for i := range grid {
         for j:= range grid[i] {
             if j<=ncolumns-plength {
-                maxprod = max(maxprod, product(grid[i][j:j+4]))
+                maxprod = MaxInt64(maxprod, product(grid[i][j:j+4]))
             }
             if j<=ncolumns-plength && i<=nrows-plength {
                 for t := range temp {
                     temp[t] = grid[i+t][j+t]
                 }
-                maxprod = max(maxprod, product(temp))
+                maxprod = MaxInt64(maxprod, product(temp))
                 for t := range temp {
                     temp[t] = grid[i+t][j]
                 }
-                maxprod = max(maxprod, product(temp))
+                maxprod = MaxInt64(maxprod, product(temp))
             }
             if j>=plength && i<=nrows-plength {
                 for t:= range temp {
                     temp[t] = grid[i+t][j-t]
                 }
-                maxprod = max(maxprod, product(temp))
+                maxprod = MaxInt64(maxprod, product(temp))
             }
                     
         }

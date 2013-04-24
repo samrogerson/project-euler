@@ -32,6 +32,7 @@ var funcs = map[int] interface{}{
     20: euler.Exercise20,
     21: euler.Exercise21,
     22: euler.Exercise22,
+    23: euler.Exercise23,
     67: euler.Exercise67,
 } 
 
