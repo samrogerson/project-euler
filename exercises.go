@@ -14,10 +14,11 @@ func main() {
     euler.Exercise8, euler.Exercise9, euler.Exercise10, euler.Exercise11,
     euler.Exercise12, euler.Exercise13, euler.Exercise14, euler.Exercise15,
     euler.Exercise16, euler.Exercise17, euler.Exercise18, euler.Exercise19,
-    euler.Exercise20 } 
+    euler.Exercise20, euler.Exercise21 } 
     //euler.Exercise67 }
 
-    for i, fi := range funcs {
+    nfuncs := len(funcs)
+    for i, fi := range funcs[nfuncs-1:nfuncs] {
         f := reflect.ValueOf(fi)
         result := f.Call([]reflect.Value{})[0]
         k := result.Kind()

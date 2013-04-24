@@ -3,7 +3,7 @@ package primes
 import "math"
 
 func IsPrime(n int64) (prime bool) {
-    return len(Factors(n)) == 1
+    return len(PrimeFactors(n)) == 1
 }
 
 func NthPrime(n int) (p int64) {
@@ -28,7 +28,7 @@ func PrimesBelow(n int64) (primes []int64) {
     return primes
 }
 
-func Factors(n int64) (factors []int64) {
+func PrimeFactors(n int64) (factors []int64) {
     if n <= int64(0) {
         return
     }

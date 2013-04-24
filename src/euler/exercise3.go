@@ -7,6 +7,6 @@ import (
 )
 
 func Exercise3() int64 {
-    factors := primes.Factors(600851475143)
+    factors := primes.PrimeFactors(600851475143)
     return factors[len(factors)-1]
 }
