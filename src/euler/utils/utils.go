@@ -6,7 +6,16 @@ import (
     "fmt"
 )
 
+
+// has to be a better way
 func AccumulateUint64(seq []uint64) (total uint64) {
+    for _, v := range seq {
+        total += v
+    }
+    return
+}
+
+func AccumulateInt64(seq []int64) (total int64) {
     for _, v := range seq {
         total += v
     }

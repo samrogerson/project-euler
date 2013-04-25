@@ -8,13 +8,11 @@ package euler
 
 import (
     "euler/primes"
+    "euler/utils"
 )
 
 func Exercise10() int64 {
-    p := primes.PrimesBelow(2e6)
-    total := int64(0)
-    for _, pv := range p {
-        total += pv
-    }
+    p := primes.Eratosthenes(2e6)
+    total := utils.AccumulateInt64(p)
     return total
 }

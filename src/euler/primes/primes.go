@@ -1,6 +1,8 @@
 package primes
 
-import "math"
+import (
+    "math"
+)
 
 func IsPrime(n int64) (prime bool) {
     return len(PrimeFactors(n)) == 1
@@ -15,6 +17,34 @@ func NthPrime(n int) (p int64) {
         }
     }
     return
+}
+
+func Eratosthenes(n int64) []int64 {
+    sievemax := (n / 2. - 1)
+    upperlim := (int64(math.Sqrt(float64(n))) -1) / 2
+
+    // going to reverse logic because of default initialization of bool
+    // false => prime, true => checked off
+    primearray := make([]bool,sievemax+1)
+    for i := int64(1); i <= upperlim; i++ {
+        if !primearray[i] {
+            for j := i * 2 * (i + 1); j <= sievemax; j += 2 * i + 1 {
+                primearray[j] = true
+            }
+        }
+    }
+
+    primes := make([]int64,int64(float64(n) / (math.Log(float64(n)) - 1.08366)));
+    primes[0] = 2
+    pcount := 1
+    for i := int64(1); i <= sievemax; i++ {
+        if !primearray[i] {
+            primes[pcount] = 2*i + 1
+            pcount += 1 
+        }
+    }
+
+    return primes[:pcount]
 }
 
 func PrimesBelow(n int64) (primes []int64) {

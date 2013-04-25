@@ -16,6 +16,8 @@ this limit.
 
 Find the sum of all the positive integers which cannot be written as the sum of
 two abundant numbers.
+
+note added: every multiple of an abundant number is abundant
 */
 
 package euler
@@ -31,14 +33,23 @@ const (
 )
 
 func collectabundant()  { // []int {
-    abundant := make([]uint64,0)
+    abundant := make([]uint64,0,28124)
 
     for i := uint64(2); i <= uint64(maxabundant); i++ {
-        factors := primes.AllFactors(uint64(i))
-        factors = factors[0:len(factors)-1]
-        sum := utils.AccumulateUint64(factors)
-        if sum > uint64(i) { 
-            abundant = append(abundant, i)
+        sel := false
+        for _, a := range abundant {
+            if i % a == 0 {
+                abundant = append(abundant, i)
+                sel = true
+            }
+        }
+        if !sel {
+            factors := primes.AllFactors(uint64(i))
+            factors = factors[0:len(factors)-1]
+            sum := utils.AccumulateUint64(factors)
+            if sum > uint64(i) { 
+                abundant = append(abundant, i)
+            }
         }
     }
     fmt.Println(abundant)
