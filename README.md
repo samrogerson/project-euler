@@ -1,6 +1,5 @@
-goeuler
-=======
+# Project Euler
 
-Project Euler with go (learning go)
+Project Euler with in various languages
 
-For some problems `source path.sh` to setup `$GOPATH`.
+- **Go:** For some problems `source path.sh` to setup `$GOPATH`.
