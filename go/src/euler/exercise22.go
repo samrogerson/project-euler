@@ -45,7 +45,7 @@ func AlphabetValue(name string) int {
 }
 
 func Exercise22() uint64 {
-    data := utils.ReadFileOrURL("docs/exercise22.dat", "http://projecteuler.net/project/names.txt")
+    data := utils.ReadFileOrURL("../docs/exercise22.dat", "http://projecteuler.net/project/names.txt")
     data = strings.Replace(data,"\"","", -1)
     names := strings.Split(data,",")
     sort.Strings(names)
