@@ -1,10 +1,8 @@
 #include <utility>
 
-namespace Euler {
-    int fib_next(std::pair<int,int>& fib_pair) {
-        return fib_pair.first + fib_pair.second;
-    }
+#include "euler-tools.h"
 
+namespace Euler {
     int exercise2() {
         std::pair<int,int> fib_nums({1,1});
         int sum = 0;

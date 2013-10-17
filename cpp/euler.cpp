@@ -1,36 +1,17 @@
 #include <iostream>
-#include <functional>
-#include <vector>
-#include <utility>
-
 #include <cstdlib>
-#include <ctime>
 
-namespace Euler{
-    typedef std::function<int()> Exercise;
-    typedef std::vector<Exercise> ExerciseCollection;
-    typedef std::pair<int,double> FunctionTime;
-
-    int exercise1();
-    int exercise2();
-    
-    FunctionTime time_exercise(Exercise& e) {
-        clock_t start, end;
-        start = clock();
-        int result = e();
-        end = clock();
-        return {result, (double)(end-start)/CLOCKS_PER_SEC};
-    }
-}
+#include "euler-tools.h"
 
 Euler::ExerciseCollection exercises = {
-    Euler::exercise1, Euler::exercise2,
+    Euler::exercise1, Euler::exercise2, Euler::exercise3, Euler::exercise4,
 };
 
 int main(int argc, char* argv[]) {
     using Euler::FunctionTime;
     using Euler::ExerciseCollection;
     using Euler::time_exercise;
+
     if(argc > 1) {
         int exnum = atoi(argv[1]) - 1;
         FunctionTime f = time_exercise(exercises[exnum]);
