@@ -4,17 +4,19 @@
 #include <functional>
 #include <vector>
 #include <utility>
+#include <cstdint>
 
 
 namespace Euler{
-    typedef std::function<int()> Exercise;
+    typedef std::function<uint64_t()> Exercise;
     typedef std::vector<Exercise> ExerciseCollection;
-    typedef std::pair<int,double> FunctionTime;
+    typedef std::pair<uint64_t,double> FunctionTime;
 
-    int exercise1();
-    int exercise2();
-    int exercise3();
-    int exercise4();
+    uint64_t exercise1();
+    uint64_t exercise2();
+    uint64_t exercise3();
+    uint64_t exercise4();
+    uint64_t exercise5();
 
 }
 

@@ -9,8 +9,10 @@
 
 namespace Euler {
     FunctionTime time_exercise(Exercise& e);
-    int fib_next(std::pair<int,int>&);
+    uint64_t fib_next(std::pair<uint64_t,uint64_t>&);
     bool is_palindrome(uint64_t);
+    uint64_t gcd(uint64_t,uint64_t);
+    uint64_t lcm(uint64_t,uint64_t);
 }
 
 #endif /* H_EulerTools */

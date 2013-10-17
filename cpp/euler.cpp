@@ -5,6 +5,7 @@
 
 Euler::ExerciseCollection exercises = {
     Euler::exercise1, Euler::exercise2, Euler::exercise3, Euler::exercise4,
+    Euler::exercise5,
 };
 
 int main(int argc, char* argv[]) {

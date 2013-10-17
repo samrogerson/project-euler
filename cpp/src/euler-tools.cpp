@@ -8,7 +8,7 @@ Euler::FunctionTime Euler::time_exercise(Exercise& e) {
     return {result, (double)(end-start)/CLOCKS_PER_SEC};
 }
 
-int Euler::fib_next(std::pair<int,int>& fib_pair) {
+uint64_t Euler::fib_next(std::pair<uint64_t,uint64_t>& fib_pair) {
     return fib_pair.first + fib_pair.second;
 }
 
@@ -21,4 +21,18 @@ bool Euler::is_palindrome(uint64_t n) {
         num /= 10;
     }
     return n == rev;
+}
+
+uint64_t Euler::gcd(uint64_t a, uint64_t b) {
+    uint64_t t=0;
+    while(b != 0) {
+        t = b;
+        b = a % b;
+        a = t;
+    }
+    return t;
+}
+
+uint64_t Euler::lcm(uint64_t a, uint64_t b) {
+    return (a * b / gcd(a, b));
 }
