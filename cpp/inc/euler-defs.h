@@ -18,6 +18,7 @@ namespace Euler{
     uint64_t exercise4();
     uint64_t exercise5();
     uint64_t exercise6();
+    uint64_t exercise7();
 
 }
 

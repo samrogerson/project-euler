@@ -12,6 +12,19 @@ uint64_t Euler::fib_next(std::pair<uint64_t,uint64_t>& fib_pair) {
     return fib_pair.first + fib_pair.second;
 }
 
+uint64_t Euler::max_factor(uint64_t n) {
+    while(n % 2 == 0) n /= 2;
+    uint64_t max_fact = 0; 
+    for(uint64_t fact = 3; n >= fact * fact; fact++) {
+        while(n % fact == 0)  {
+            n /= fact;
+            max_fact = fact;
+        }
+    }
+    if(n != 1) max_fact = n;
+    return max_fact;
+}
+
 bool Euler::is_palindrome(uint64_t n) {
     uint64_t num = n;
     uint64_t rev = 0;
@@ -49,3 +62,8 @@ uint64_t Euler::square_sum(uint64_t n) {
     uint64_t total = (n+1) * n / 2;
     return total*total;
 }
+
+bool Euler::is_prime(uint64_t n) {
+    return Euler::max_factor(n) == n;
+}
+
