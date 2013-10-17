@@ -36,3 +36,16 @@ uint64_t Euler::gcd(uint64_t a, uint64_t b) {
 uint64_t Euler::lcm(uint64_t a, uint64_t b) {
     return (a * b / gcd(a, b));
 }
+
+uint64_t Euler::sum_squares(uint64_t n) {
+    uint64_t total = 0;
+    for(uint64_t i=1; i<=n; ++i) {
+        total += i*i;
+    }
+    return total;
+}
+
+uint64_t Euler::square_sum(uint64_t n) {
+    uint64_t total = (n+1) * n / 2;
+    return total*total;
+}

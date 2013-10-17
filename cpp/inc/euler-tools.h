@@ -13,6 +13,8 @@ namespace Euler {
     bool is_palindrome(uint64_t);
     uint64_t gcd(uint64_t,uint64_t);
     uint64_t lcm(uint64_t,uint64_t);
+    uint64_t sum_squares(uint64_t);
+    uint64_t square_sum(uint64_t);
 }
 
 #endif /* H_EulerTools */
