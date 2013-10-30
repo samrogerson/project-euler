@@ -67,3 +67,15 @@ bool Euler::is_prime(uint64_t n) {
     return Euler::max_factor(n) == n;
 }
 
+std::vector<uint64_t> Euler::pythagorean_triple(uint64_t total) {
+    for(uint64_t a = 1; a < total - 5; ++a) {
+        for(uint64_t b=a+1; b + a < total - 3; ++b) {
+            for(uint64_t c = b+1; c < total - 3;  ++c) {
+                if((a+b+c == total) && (a*a + b*b == c*c)) {
+                    return std::vector<uint64_t>{a,b,c};
+                }
+            }
+        }
+    }
+    return std::vector<uint64_t>{0,0,0};
+}

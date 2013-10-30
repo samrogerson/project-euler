@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <utility>
 #include <ctime>
+#include <vector>
 
 #include "euler-defs.h"
 
@@ -17,6 +18,7 @@ namespace Euler {
     uint64_t sum_squares(uint64_t);
     uint64_t square_sum(uint64_t);
     bool is_prime(uint64_t);
+    std::vector<uint64_t> pythagorean_triple(uint64_t);
 }
 
 #endif /* H_EulerTools */

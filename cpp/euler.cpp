@@ -4,8 +4,8 @@
 #include "euler-tools.h"
 
 Euler::ExerciseCollection exercises = {
-    Euler::exercise1, Euler::exercise2, Euler::exercise3, Euler::exercise4,
-    Euler::exercise5, Euler::exercise6, Euler::exercise7, Euler::exercise8,
+    Euler::exercise1, Euler::exercise2, Euler::exercise3, Euler::exercise4, Euler::exercise5,
+    Euler::exercise6, Euler::exercise7, Euler::exercise8, Euler::exercise9,
 };
 
 int main(int argc, char* argv[]) {
