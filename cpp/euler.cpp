@@ -5,7 +5,7 @@
 
 Euler::ExerciseCollection exercises = {
     Euler::exercise1, Euler::exercise2, Euler::exercise3, Euler::exercise4, Euler::exercise5,
-    Euler::exercise6, Euler::exercise7, Euler::exercise8, Euler::exercise9,
+    Euler::exercise6, Euler::exercise7, Euler::exercise8, Euler::exercise9, Euler::exercise10,
 };
 
 int main(int argc, char* argv[]) {
@@ -15,9 +15,13 @@ int main(int argc, char* argv[]) {
 
     if(argc > 1) {
         int exnum = atoi(argv[1]) - 1;
-        FunctionTime f = time_exercise(exercises[exnum]);
-        std::cout << "Exercise " << exnum+1 << ": " << f.first << " in " << f.second <<
-            " seconds" << std::endl;
+        if(exnum < exercises.size()) {
+            FunctionTime f = time_exercise(exercises[exnum]);
+            std::cout << "Exercise " << exnum+1 << ": " << f.first << " in " << f.second <<
+                " seconds" << std::endl;
+        } else {
+            std::cerr << "Invalid exercise number " << exnum+1 << std::endl;
+        }
     } else {
         for(ExerciseCollection::size_type i = 0; i < exercises.size(); ++i) {
             FunctionTime f = time_exercise(exercises[i]);

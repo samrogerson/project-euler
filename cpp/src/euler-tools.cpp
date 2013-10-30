@@ -79,3 +79,15 @@ std::vector<uint64_t> Euler::pythagorean_triple(uint64_t total) {
     }
     return std::vector<uint64_t>{0,0,0};
 }
+
+std::vector<bool> Euler::eratosthenes(uint64_t n) {
+    std::vector<bool> values(n,true);
+    values[0] = values[1] = false;
+    for(uint64_t i=2; i<n; ++i) {
+        for(uint64_t j=2*i; j<n; j+=i) {
+            values[j] = false;
+        }
+    }
+    return values;
+}
+

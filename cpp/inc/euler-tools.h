@@ -19,6 +19,7 @@ namespace Euler {
     uint64_t square_sum(uint64_t);
     bool is_prime(uint64_t);
     std::vector<uint64_t> pythagorean_triple(uint64_t);
+    std::vector<bool> eratosthenes(uint64_t);
 }
 
 #endif /* H_EulerTools */
